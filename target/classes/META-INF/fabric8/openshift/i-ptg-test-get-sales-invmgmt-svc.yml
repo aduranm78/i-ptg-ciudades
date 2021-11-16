@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    fabric8.io/git-commit: 0569849165af47f7753140b06ba67b017257b527
+    fabric8.io/iconUrl: img/icons/camel.svg
+    fabric8.io/git-branch: main
+  labels:
+    expose: "true"
+    app: i-ptg-test-get-sales-invmgmt
+    provider: fabric8
+    version: 0.1.0
+    group: com.redhat
+  name: i-ptg-test-get-sales-invmgmt
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: i-ptg-test-get-sales-invmgmt
+    provider: fabric8
+    group: com.redhat
