@@ -68,6 +68,7 @@ public class Routes extends RouteBuilder {
           }else{
               Url = Url + "bridgeEndpoint=true&throwExceptionOnFailure=false";
           }
+          exchange.getMessage().setHeader("Access-Control-Allow-Origin", "*");
           exchange.getMessage().setHeader("CamelHttpRawQuery", query);
           System.out.println("Query:"+query);
           exchange.getMessage().setHeader(Exchange.HTTP_URI, Url);

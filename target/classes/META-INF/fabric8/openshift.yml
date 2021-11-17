@@ -6,7 +6,9 @@ items:
   kind: Service
   metadata:
     annotations:
+      fabric8.io/git-commit: ff682a9264f08ccb42b65f8116c3070a83627a4b
       fabric8.io/iconUrl: img/icons/camel.svg
+      fabric8.io/git-branch: main
     labels:
       expose: "true"
       app: i-ptg-test-get-ciudades
@@ -28,7 +30,9 @@ items:
   kind: DeploymentConfig
   metadata:
     annotations:
+      fabric8.io/git-commit: ff682a9264f08ccb42b65f8116c3070a83627a4b
       fabric8.io/iconUrl: img/icons/camel.svg
+      fabric8.io/git-branch: main
       fabric8.io/metrics-path: dashboard/file/camel-routes.json/?var-project=i-ptg-test-get-ciudades&var-version=0.1.0
     labels:
       app: i-ptg-test-get-ciudades
@@ -50,7 +54,9 @@ items:
     template:
       metadata:
         annotations:
+          fabric8.io/git-commit: ff682a9264f08ccb42b65f8116c3070a83627a4b
           fabric8.io/iconUrl: img/icons/camel.svg
+          fabric8.io/git-branch: main
           fabric8.io/metrics-path: dashboard/file/camel-routes.json/?var-project=i-ptg-test-get-ciudades&var-version=0.1.0
         labels:
           app: i-ptg-test-get-ciudades
