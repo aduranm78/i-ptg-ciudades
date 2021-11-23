@@ -24,7 +24,7 @@ public class Routes extends RouteBuilder {
   @Override
   public void configure() throws Exception {
 
-    Url = "https://apisgratis.com/api/codigospostales/v2/ciudades/?";
+    Url = "https://apisgratis.com/api/cp/v2/ciudades/?";
     queryBase = "";
 
 
@@ -75,12 +75,14 @@ public class Routes extends RouteBuilder {
           System.out.println("URI:"+Url);
         }
       })
+      //.setHeader("Access-Control-Allow-Origin", simple("*"))
+      .setHeader("Accept-Encoding", simple("*"))
       .to("log:DEBUG?showBody=true&showHeaders=true")
       .to("https://ciudades")
       .streamCaching()
       .log(LoggingLevel.INFO, "${in.headers.CamelFileName}")
-      .to("log:DEBUG?showBody=true&showHeaders=true")
-      .removeHeaders("*");
+      .to("log:DEBUG?showBody=true&showHeaders=true");
+      //.removeHeaders("*");
       
 //      .choice()
 //        .when(simple("${header.CamelHttpResponseCode} != 201 && ${header.CamelHttpResponseCode} != 202"))
